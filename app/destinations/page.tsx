@@ -50,7 +50,7 @@ const destinations: Destination[] = [
     bestTime: 'June-September, December-January',
     difficulty: 'Challenging',
     visitors: 800,
-    image: '/adventure-activities.jpg',
+    image: '/rwenzori-mountains.jpg',
   },
   {
     id: '4',
@@ -61,7 +61,7 @@ const destinations: Destination[] = [
     bestTime: 'June-August, December-February',
     difficulty: 'Moderate',
     visitors: 3000,
-    image: '/queen-elizabeth-park.jpg',
+    image: '/kibale-forest.jpg',
   },
   {
     id: '5',
@@ -83,7 +83,7 @@ const destinations: Destination[] = [
     bestTime: 'Year-round',
     difficulty: 'Easy',
     visitors: 2000,
-    image: '/adventure-activities.jpg',
+    image: '/lake-bunyonyi.jpg',
   },
 ]
 

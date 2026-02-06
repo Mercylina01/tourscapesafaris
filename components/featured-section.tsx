@@ -22,7 +22,7 @@ const featuredItems: FeaturedItem[] = [
     title: 'Mountain Gorilla Trek',
     category: 'Uganda - Exclusive',
     description: 'Meet endangered mountain gorillas in their natural habitat. A once-in-a-lifetime encounter in Bwindi Impenetrable Forest.',
-    image: '/mountain-gorillas.jpg',
+    image: '/gorilla4.jpg',
     rating: 4.9,
     price: '$2,999',
     link: '/safaris',

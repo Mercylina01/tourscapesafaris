@@ -31,7 +31,7 @@ const safariPackages: SafariPackage[] = [
     duration: 3,
     groupSize: 8,
     price: 2999,
-    image: '/mountain-gorillas.jpg',
+    image: '/gorilla3.jpg',
     destinations: ['Bwindi Impenetrable Forest', 'Lake Bunyonyi'],
     activities: ['Gorilla trekking', 'Forest walks', 'Cultural visit'],
     inclusions: [
@@ -71,7 +71,7 @@ const safariPackages: SafariPackage[] = [
     duration: 6,
     groupSize: 10,
     price: 2499,
-    image: '/queen-elizabeth-park.jpg',
+    image: '/safari-wildlife1.jpg',
     destinations: ['Kibale Forest', 'Queen Elizabeth NP', 'Crater Lakes'],
     activities: ['Chimp trekking', 'Game drives', 'Nature walks', 'Scenic hikes'],
     inclusions: [
@@ -90,8 +90,8 @@ const safariPackages: SafariPackage[] = [
     name: 'Adventure & Adventure',
     duration: 7,
     groupSize: 6,
-    price: 3299,
-    image: '/adventure-activities.jpg',
+    price: 4000,
+    image: '/rwenzori.jpg',
     destinations: ['Rwenzori Mountains', 'Murchison Falls', 'Kidepo Valley'],
     activities: ['Mountain climbing', 'Rock climbing', 'White water rafting'],
     inclusions: [
@@ -131,7 +131,7 @@ const safariPackages: SafariPackage[] = [
     duration: 10,
     groupSize: 8,
     price: 4899,
-    image: '/mountain-gorillas.jpg',
+    image: '/uganda.jpg',
     destinations: ['All major destinations', 'Multiple national parks'],
     activities: ['All activities included', 'Cultural experiences', 'Wildlife'],
     inclusions: [
@@ -145,6 +145,72 @@ const safariPackages: SafariPackage[] = [
     rating: 5.0,
     reviews: 142,
   },
+
+  {
+    id: '7',
+    name: 'Traditional Experience',
+    duration: 0,
+    groupSize: 0,
+    price: 500,
+    image: '/traditional-safari.jpg',
+    destinations: ['Tailored to your interests'],
+    activities: ['Transportation', 'Guided tours', 'Custom activities'],
+    inclusions: [
+      'Personalized planning',
+      'Dedicated guide',
+      'Flexible accommodations',
+      'Custom activities',
+      '24/7 support',
+    ],
+    difficulty: 'budget',
+    rating: 5.0,
+    reviews: 58,
+  },
+
+  {
+    id: '8',
+    name: 'Budget Safari',
+    duration: 0,
+    groupSize: 0,
+    price: 500,
+    image: '/budget-safari.jpg',
+    destinations: ['kalangala', 'jinga'],
+    activities: ['Fully customizable itinerary'],
+    inclusions: [
+      'Affordable accommodations',
+      'Group tours',
+      'Basic meals',
+      'Shared transport',
+      'Local guides',
+    ],
+    difficulty: 'budget',
+    rating: 4.8,
+    reviews: 112,
+  },
+
+  {
+    id: '9',
+    name: 'Luxury Safari',
+    duration: 0,
+    groupSize: 0,
+    price: 3600,
+    image: '/luxury-safari.jpg',
+    destinations: ['Exclusive lodges', 'Private reserves'],
+    activities: ['Tailored experiences', 'Private guides'],
+    inclusions: [
+      'Luxury accommodations',
+      'Private tours',
+      'Gourmet meals',
+      'Personalized services',  
+      'Exclusive access',
+    ],
+    difficulty: 'luxury',
+    rating: 5.0,
+    reviews: 64,  
+  },     
+  
+
+
 ]
 
 export default function SafarisPage() {
@@ -153,8 +219,8 @@ export default function SafarisPage() {
 
   const filteredPackages = safariPackages.filter((pkg) => {
     if (selectedDifficulty && pkg.difficulty !== selectedDifficulty) return false
-    if (selectedPrice === 'budget' && pkg.price > 2000) return false
-    if (selectedPrice === 'mid' && (pkg.price < 2000 || pkg.price > 3500)) return false
+    if (selectedPrice === 'budget' && pkg.price < 1000) return false
+    if (selectedPrice === 'mid' && (pkg.price < 1000 || pkg.price > 3500)) return false
     if (selectedPrice === 'luxury' && pkg.price < 3500) return false
     return true
   })

@@ -25,7 +25,7 @@ const galleryImages: GalleryImage[] = [
     id: '2',
     title: 'Sunrise Over Savanna',
     description: 'Golden sunrise lighting up the vast Queen Elizabeth National Park landscape.',
-    image: '/queen-elizabeth-park.jpg',
+    image: '/sunset.jpg',
     category: 'Landscapes',
   },
   {
@@ -74,7 +74,7 @@ const galleryImages: GalleryImage[] = [
     id: '9',
     title: 'Eco-Lodge Stay',
     description: 'Sustainable luxury accommodation blending with the natural environment.',
-    image: '/eco-lodge.jpg',
+    image: '/tents.jpg',
     category: 'Accommodations',
   },
   {
@@ -84,6 +84,100 @@ const galleryImages: GalleryImage[] = [
     image: '/white-water-rafting.jpg',
     category: 'Activities',
   },
+
+  {
+    id: '11',
+    title: 'Chimpanzee Trekking',
+    description: 'Tracking and observing chimpanzees in Kibale Forest National Park.',
+    image: '/gorilla2.jpg',
+    category: 'Wildlife',
+  },
+
+  
+  {
+    id: '12',
+    title: 'Bird Watching',
+    description: 'Observing rare and endemic bird species in their natural habitats.',
+    image: '/bird-watching.jpg',
+    category: 'Wildlife',
+  },
+
+  
+  {
+    id: '13',
+    title: 'Boat Rafting on Nile',
+    description: 'Enjoy a scenic boat along the Nile River with wildlife viewing opportunities.',
+    image: '/river-nile.jpg',
+    category: 'Activities',
+  },
+
+  {
+    id: '14',
+    title: 'Boat Cruise at Sunset',
+    description: 'Experience a romantic sunset cruise along the Nile River with stunning views.',
+    image: '/boat-cruise.jpg',
+    category: 'Activities',
+  },
+
+    {
+    id: '15',
+    title: 'Traditional Dance Performance',
+    description: 'Experience vibrant traditional dance performances showcasing Uganda’s rich culture.',
+    image: '/cultural-dances.jpg',
+    category: 'Cultural',
+  },
+
+  {
+    id: '16',
+    title: 'Nature Walks',
+    description: 'Explore the diverse ecosystems of Uganda through guided nature walks.',
+    image: '/nature-walks.jpg',
+    category: 'Activities',
+  },
+
+  {
+    id: '17',
+    title: 'Local Market Visit',
+    description: 'Immerse yourself in local culture with a visit to bustling markets.',
+    image: '/local-market.jpg',
+    category: 'Cultural',
+  },
+  
+  
+    { 
+    id: '18',
+    title: 'Sunset Safari Drive',
+    description: 'Experience the magic of a sunset safari drive with breathtaking views.',
+    image: '/drive.jpg',
+    category: 'Activities',     
+    },
+
+  {
+      id: '19', 
+      title: 'Wildlife Photography',
+      description: 'Capture stunning wildlife moments in their natural habitats.',
+      image: '/tiger.jpg',
+      category: 'Wildlife', 
+  },
+
+  {
+    id: '20',
+    title: 'Cultural Village Tour',
+    description: 'Visit a traditional village to learn about local customs and traditions.',
+    image: '/cultural-village.jpg',
+    category: 'Cultural',   
+  },
+
+  {
+    id: '21',
+    title: 'Tea Plantation Visit',
+    description: 'Explore the lush tea plantations of Uganda and learn about tea production.',
+    image: '/tea-plantation.jpg',
+    category: 'Cultural',   
+  }
+
+   
+
 ]
 
 export function GalleryShowcase() {

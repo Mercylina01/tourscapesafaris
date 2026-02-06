@@ -68,7 +68,7 @@ const accommodations: Accommodation[] = [
   },
   {
     id: '3',
-    name: 'Kampala City Hotel',
+    name: 'Kampala Serena Hotel',
     location: 'Kampala',
     type: 'Mid-Range',
     pricePerNight: 200,
@@ -97,7 +97,7 @@ const accommodations: Accommodation[] = [
     rating: 4.5,
     reviews: 142,
     capacity: 40,
-    image: '/adventure-activities.jpg',
+    image: '/tents.jpg',
     description: 'Authentic safari experience with comfortable tent accommodation.',
     amenities: [
       'Tents',
