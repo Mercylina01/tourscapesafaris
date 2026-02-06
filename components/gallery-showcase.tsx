@@ -32,7 +32,7 @@ const galleryImages: GalleryImage[] = [
     id: '3',
     title: 'Luxury Safari Lodge',
     description: 'Premium accommodation with stunning views overlooking the African wilderness.',
-    image: '/luxury-lodge.jpg',
+    image: '/kyaninga.jpg',
     category: 'Accommodations',
   },
   {

@@ -44,7 +44,7 @@ const featuredItems: FeaturedItem[] = [
     title: 'Luxury Safari Lodge',
     category: 'Premium Stay',
     description: 'Experience ultimate comfort with stunning views. World-class amenities and personal service await.',
-    image: '/luxury-lodge.jpg',
+    image: '/activities.jpg',
     rating: 4.9,
     price: '$450/night',
     link: '/accommodations',

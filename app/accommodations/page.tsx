@@ -32,7 +32,7 @@ const accommodations: Accommodation[] = [
     rating: 4.9,
     reviews: 156,
     capacity: 20,
-    image: '/luxury-lodge.jpg',
+    image: '/buhoma.jpg',
     description: 'Perched on the edge of Bwindi forest with stunning views and exceptional service.',
     amenities: [
       'Private rooms',
@@ -47,14 +47,14 @@ const accommodations: Accommodation[] = [
   },
   {
     id: '2',
-    name: 'Fort Portal Safari Lodge',
+    name: 'Kyaninga Lodge',
     location: 'Fort Portal',
     type: 'Mid-Range',
     pricePerNight: 280,
     rating: 4.7,
     reviews: 98,
     capacity: 30,
-    image: '/luxury-lodge.jpg',
+    image: '/kyaninga.jpg',
     description: 'Comfortable lodge perfect for exploring Kibale Forest and crater lakes.',
     amenities: [
       'Twin/Double rooms',
@@ -68,14 +68,14 @@ const accommodations: Accommodation[] = [
   },
   {
     id: '3',
-    name: 'Kampala Serena Hotel',
+    name: 'Serena Hotel',
     location: 'Kampala',
     type: 'Mid-Range',
     pricePerNight: 200,
     rating: 4.6,
     reviews: 203,
     capacity: 50,
-    image: '/luxury-lodge.jpg',
+    image: '/serena.jpg',
     description: 'Modern hotel in Uganda\'s capital with easy access to city attractions.',
     amenities: [
       'AC rooms',
@@ -118,7 +118,7 @@ const accommodations: Accommodation[] = [
     rating: 4.9,
     reviews: 124,
     capacity: 25,
-    image: '/luxury-lodge.jpg',
+    image: '/bunyonyi.jpg',
     description: 'Waterfront luxury resort with island views and water activities.',
     amenities: [
       'Suites',
@@ -140,7 +140,7 @@ const accommodations: Accommodation[] = [
     rating: 4.8,
     reviews: 89,
     capacity: 20,
-    image: '/adventure-activities.jpg',
+    image: '/kibale-lodge.jpg',
     description: 'Sustainable eco-lodge with forest views and authentic experiences.',
     amenities: [
       'Chalets',
@@ -161,7 +161,7 @@ const accommodations: Accommodation[] = [
     rating: 4.9,
     reviews: 167,
     capacity: 35,
-    image: '/luxury-lodge.jpg',
+    image: '/mweya.jpg',
     description: 'Premier lodge with direct park access and excellent safari operations.',
     amenities: [
       'Spacious rooms',
@@ -176,14 +176,14 @@ const accommodations: Accommodation[] = [
   },
   {
     id: '8',
-    name: 'Kampala Backpackers',
+    name: 'Kampala Hotels',
     location: 'Kampala City Center',
     type: 'Budget',
     pricePerNight: 45,
     rating: 4.4,
     reviews: 341,
     capacity: 60,
-    image: '/adventure-activities.jpg',
+    image: '/logos.jpg',
     description: 'Social hostel perfect for budget travelers and backpackers.',
     amenities: [
       'Dorms/privates',

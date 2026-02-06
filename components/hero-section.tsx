@@ -1,19 +1,43 @@
+"use client";
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, MapPin, Users, Calendar } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
+
+const heroImages = [
+  "/hero-safari.jpg",
+  "/eagle.jpg",
+  "/safaris.jpg",
+]
 
 export function HeroSection() {
+  const [currentImage, setCurrentImage] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden pt-16">
-      {/* Background Image */}
-      <Image
-        src="/hero-safari.jpg"
-        alt="Uganda Safari - Majestic Lions at Sunset"
-        fill
-        className="object-cover brightness-75"
-        priority
-      />
+      {/* Background Slideshow */}
+      {heroImages.map((src, index) => (
+        <Image
+          key={index}
+          src={src}
+          alt={`Uganda Safari Background ${index + 1}`}
+          fill
+          className={`object-cover brightness-75 absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+            index === currentImage ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+          }`}
+          priority={index === 0} // Only the first image is high priority
+        />
+      ))}
 
       {/* Content Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center">
@@ -21,7 +45,9 @@ export function HeroSection() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full mb-6 border border-white/20">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-white text-sm font-medium">Experience Luxury Safari Adventures</span>
+              <span className="text-white text-sm font-medium">
+                Experience Luxury Safari Adventures
+              </span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">

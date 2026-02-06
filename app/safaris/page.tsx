@@ -111,7 +111,7 @@ const safariPackages: SafariPackage[] = [
     duration: 4,
     groupSize: 4,
     price: 4199,
-    image: '/luxury-lodge.jpg',
+    image: '/crater-lakes.jpg',
     destinations: ['Crater Lakes', 'Lake Kivu', 'Exclusive lodges'],
     activities: ['Spa treatments', 'Gourmet dining', 'Scenic flights', 'Private tours'],
     inclusions: [
