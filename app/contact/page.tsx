@@ -1,13 +1,11 @@
 'use client'
 
-import React from "react"
-
+import React, { useState } from "react"
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
-import { useState } from 'react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,8 +16,6 @@ export default function ContactPage() {
     message: '',
   })
 
-  const [submitted, setSubmitted] = useState(false)
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -27,29 +23,14 @@ export default function ContactPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
-    // Send message via WhatsApp
-    const message = `Hello TourScape Safaris,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nSubject: ${formData.subject}\n\nMessage: ${formData.message}`
-    const encodedMessage = encodeURIComponent(message)
-    const whatsappLink = `https://wa.me/256702860241?text=${encodedMessage}`
-    
-    // Send email
-    const mailtoLink = `mailto:info@tourscape.org?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email}, ${formData.phone})\n\n${formData.message}`)}`
-    
-    // Open both - email and WhatsApp
-    window.open(mailtoLink)
-    setTimeout(() => {
-      window.open(whatsappLink, '_blank')
-    }, 500)
-    
-    console.log('Message sent via email and WhatsApp:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
-    }, 3000)
+  const handleWhatsApp = () => {
+    const message = `Hello TourScape Safaris,%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0A%0ASubject: ${formData.subject}%0A%0AMessage: ${formData.message}`
+    window.open(`https://wa.me/256702860241?text=${message}`, '_blank')
+  }
+
+  const handleEmail = () => {
+    const body = `From: ${formData.name} (${formData.email}, ${formData.phone})%0A%0A${formData.message}`
+    window.open(`mailto:info@tourscapesafaris.com?subject=${encodeURIComponent(formData.subject)}&body=${body}`)
   }
 
   return (
@@ -60,10 +41,10 @@ export default function ContactPage() {
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
-            Get in Touch
+            Contact Our Team
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our safari packages? Reach out to our team and we'll help you plan the perfect Uganda adventure.
+            Fill the form below and reach us directly via WhatsApp or Email.
           </p>
         </div>
       </section>
@@ -78,7 +59,9 @@ export default function ContactPage() {
                 <Phone size={24} />
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground">Phone & WhatsApp</h3>
-              <a href="tel:+256702860241" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">+256 702 860 241</a>
+              <a href="tel:+256702860241" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
+                +256 702 860 241
+              </a>
               <p className="text-muted-foreground text-sm">Available 24/7 for bookings & emergencies</p>
             </Card>
 
@@ -87,7 +70,9 @@ export default function ContactPage() {
                 <Mail size={24} />
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground">Email</h3>
-              <a href="mailto:info@tourscape.org" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">info@tourscape.org</a>
+              <a href="mailto:info@tourscapesafaris.com" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
+                info@tourscapesafaris.com
+              </a>
               <p className="text-muted-foreground text-sm">We respond within 24 hours</p>
             </Card>
 
@@ -103,118 +88,96 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          {/* Contact Form & Info */}
+          {/* Form Card */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Form */}
             <Card className="p-8 border-border">
-              <h2 className="text-2xl font-bold mb-6 text-foreground">Send us a Message</h2>
+              <h2 className="text-2xl font-bold mb-6 text-foreground">Contact Form</h2>
 
-              {submitted ? (
-                <div className="bg-primary/10 border border-primary text-primary p-4 rounded-lg text-center">
-                  <p className="font-semibold">Thank you for your message!</p>
-                  <p className="text-sm mt-1">We'll get back to you as soon as possible.</p>
+              <div className="space-y-4">
+                {/* Name */}
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Your Name"
+                    className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+
+                {/* Email & Phone */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-foreground mb-2">
-                      Full Name *
-                    </label>
+                    <label className="block text-sm font-semibold text-foreground mb-2">Email *</label>
                     <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
+                      type="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleChange}
                       required
-                      placeholder="Your Name"
+                      placeholder="your@email.com"
                       className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-foreground mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="your@email.com"
-                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-foreground mb-2">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+256 702 860 241"
-                        className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      />
-                    </div>
-                  </div>
-
                   <div>
-                    <label className="block text-sm font-semibold text-foreground mb-2">
-                      Subject *
-                    </label>
-                    <select
-                      name="subject"
-                      value={formData.subject}
+                    <label className="block text-sm font-semibold text-foreground mb-2">Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="safari">Safari Package Inquiry</option>
-                      <option value="accommodation">Accommodation</option>
-                      <option value="visa">Visa Services</option>
-                      <option value="booking">Booking Question</option>
-                      <option value="general">General Inquiry</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-foreground mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      placeholder="Tell us about your Uganda adventure plans..."
-                      rows={5}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                      placeholder="+256 702 860 241"
+                      className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
                   </div>
+                </div>
 
-                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base">
-                    Send Message
+                {/* Subject */}
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Subject *</label>
+                  <select
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="safari">Safari Package Inquiry</option>
+                    <option value="accommodation">Accommodation</option>
+                    <option value="visa">Visa Services</option>
+                    <option value="booking">Booking Question</option>
+                    <option value="general">General Inquiry</option>
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Message *</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Tell us about your Uganda adventure plans..."
+                    rows={5}
+                    className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                  />
+                </div>
+
+                {/* Buttons */}
+                <div className="flex flex-col gap-3 mt-4">
+                  <Button onClick={handleWhatsApp} className="w-full bg-green-600 text-white hover:bg-green-700">
+                    Send via WhatsApp
                   </Button>
-
-                  <p className="text-xs text-muted-foreground text-center mt-4">
-                    We'll respond within 24 hours during business hours
-                  </p>
-                  
-                  <div className="mt-6 pt-6 border-t border-border text-center">
-                    <p className="text-sm text-muted-foreground mb-3">Or reach us on WhatsApp directly:</p>
-                    <a href="https://wa.me/256702860241" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-secondary text-white hover:bg-secondary/90">
-                        Chat on WhatsApp
-                      </Button>
-                    </a>
-                  </div>
-                </form>
-              )}
+                  <Button onClick={handleEmail} className="w-full bg-blue-600 text-white hover:bg-blue-700">
+                    Send via Email
+                  </Button>
+                </div>
+              </div>
             </Card>
 
             {/* Info & Hours */}
