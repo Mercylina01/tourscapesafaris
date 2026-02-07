@@ -11,7 +11,6 @@ interface FeaturedItem {
   description: string
   image: string
   rating: number
-  price?: string
   link: string
   tags: string[]
 }
@@ -24,7 +23,6 @@ const featuredItems: FeaturedItem[] = [
     description: 'Meet endangered mountain gorillas in their natural habitat. A once-in-a-lifetime encounter in Bwindi Impenetrable Forest.',
     image: '/gorilla4.jpg',
     rating: 4.9,
-    price: '$2,999',
     link: '/safaris',
     tags: ['3 Days', 'Guided Tour', 'Photography'],
   },
@@ -35,7 +33,6 @@ const featuredItems: FeaturedItem[] = [
     description: 'Experience Africa\'s most iconic destinations. Travel through Uganda, Kenya, and Tanzania with wildlife at every turn.',
     image: '/queen-elizabeth-park.jpg',
     rating: 4.9,
-    price: '$5,499',
     link: '/international-tours',
     tags: ['14 Days', 'Multi-Country', 'Luxury'],
   },
@@ -46,7 +43,6 @@ const featuredItems: FeaturedItem[] = [
     description: 'Experience ultimate comfort with stunning views. World-class amenities and personal service await.',
     image: '/activities.jpg',
     rating: 4.9,
-    price: '$450/night',
     link: '/accommodations',
     tags: ['5-Star', 'All-Inclusive', 'Spa'],
   },
@@ -104,21 +100,18 @@ export function FeaturedSection() {
                   ))}
                 </div>
 
-                {/* Rating and Price */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1">
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={14}
-                          className={i < Math.floor(item.rating) ? 'fill-primary text-primary' : 'text-muted'}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm font-semibold text-foreground ml-2">{item.rating}</span>
+                {/* Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={14}
+                        className={i < Math.floor(item.rating) ? 'fill-primary text-primary' : 'text-muted'}
+                      />
+                    ))}
                   </div>
-                  {item.price && <span className="text-lg font-bold text-primary">{item.price}</span>}
+                  <span className="text-sm font-semibold text-foreground ml-2">{item.rating}</span>
                 </div>
 
                 {/* Button */}

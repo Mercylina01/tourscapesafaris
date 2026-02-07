@@ -104,11 +104,11 @@ export function HeroSection() {
                 <span className="text-white/80 text-sm">Destinations</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-primary">500+</span>
+                <span className="text-2xl font-bold text-primary">50+</span>
                 <span className="text-white/80 text-sm">Happy Travelers</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-primary">10yrs</span>
+                <span className="text-2xl font-bold text-primary">6+yrs</span>
                 <span className="text-white/80 text-sm">Experience</span>
               </div>
             </div>

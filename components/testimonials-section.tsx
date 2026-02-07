@@ -11,8 +11,8 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Sarah Johnson',
-    location: 'New York, USA',
+    name: 'Esther Leah',
+    location: 'Kampala, Uganda',
     content:
       'My mountain gorilla trekking experience was absolutely magical. The professionalism and care from the TourScape team made it unforgettable. Best investment ever!',
     rating: 5,
@@ -22,18 +22,18 @@ const testimonials: Testimonial[] = [
     location: 'Singapore',
     content:
       'From booking to return, everything was perfectly organized. The guides were knowledgeable, the accommodations luxurious, and the wildlife encounters exceeded expectations.',
-    rating: 5,
+    rating: 4,
   },
   {
-    name: 'Emma Williams',
-    location: 'London, UK',
+    name: 'Amina Hassan',
+    location: 'Kampala, Uganda',
     content:
-      'I came for the safaris but fell in love with Uganda. TourScape\'s local knowledge and attention to detail made our family trip truly special. Highly recommended!',
+      'I took a trip to Murchisons with Tourscape and it was so amazing . Highly recommended!',
     rating: 5,
   },
   {
-    name: 'David Martinez',
-    location: 'Madrid, Spain',
+    name: 'Kaaya Emmanuel',
+    location: 'Camden, USA',
     content:
       'The visa assistance was incredibly helpful and stress-free. Combined with their amazing safari packages, TourScape made my Uganda adventure seamless from start to finish.',
     rating: 5,
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-6 mt-16 text-center">
           <div>
-            <p className="text-3xl md:text-4xl font-bold text-primary">500+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">50+</p>
             <p className="text-muted-foreground mt-2">Happy Travelers</p>
           </div>
           <div>
