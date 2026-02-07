@@ -60,7 +60,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground">Phone & WhatsApp</h3>
               <a href="tel:+256702860241" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
-                +256 702 860 241
+                +256 784 606507
               </a>
               <p className="text-muted-foreground text-sm">Available 24/7 for bookings & emergencies</p>
             </Card>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+256 702 860 241"
+                      placeholder="+256 002 000 001"
                       className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
                   </div>
