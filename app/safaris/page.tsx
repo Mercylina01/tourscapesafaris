@@ -131,7 +131,7 @@ const safariPackages: SafariPackage[] = [
     duration: 10,
     groupSize: 8,
     price: 4899,
-    image: '/uganda.jpg',
+    image: '/white-water-rafting.jpg',
     destinations: ['All major destinations', 'Multiple national parks'],
     activities: ['All activities included', 'Cultural experiences', 'Wildlife'],
     inclusions: [

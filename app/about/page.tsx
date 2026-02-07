@@ -30,6 +30,7 @@ export default function AboutPage() {
     },
   ]
 
+  // Team array is kept but not used
   const team = [
     {
       name: 'Safari Guide',
@@ -158,7 +159,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Team Section (commented out for now) */}
+        {/*
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Meet Our Team</h2>
@@ -176,6 +178,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white">

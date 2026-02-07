@@ -202,7 +202,8 @@ export default function ServicesPage() {
             </div>
           </Card>
 
-          {/* Pricing Table */}
+          {/* Pricing Table (commented out) */}
+          {/*
           <Card className="p-8 border-border bg-foreground/5">
             <h3 className="text-3xl font-bold mb-6 text-foreground">Service Pricing</h3>
 
@@ -235,6 +236,8 @@ export default function ServicesPage() {
               </table>
             </div>
           </Card>
+          */}
+
         </div>
       </section>
 

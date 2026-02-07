@@ -1,46 +1,64 @@
 "use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const heroImages = [
   "/hero-safari.jpg",
   "/eagle.jpg",
   "/safaris.jpg",
-]
+  "/hipo.jpg",
+  "/rwenzori.jpg",
+  "/elephant.jpg",
+  "/croc.jpg",
+  "/tiger.jpg",
+  "/zebra.jpg",
+  "/adventure-activities.jpg",
+];
 
 export function HeroSection() {
-  const [currentImage, setCurrentImage] = useState(0)
+  const [currentImage, setCurrentImage] = useState(0);
 
+  // Preload all images in the background
+  useEffect(() => {
+    heroImages.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
+  // Slideshow interval starts immediately
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length)
-    }, 5000) // Change image every 5 seconds
-
-    return () => clearInterval(interval)
-  }, [])
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // 5 seconds per slide
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden pt-16">
       {/* Background Slideshow */}
-      {heroImages.map((src, index) => (
-        <Image
-          key={index}
-          src={src}
-          alt={`Uganda Safari Background ${index + 1}`}
-          fill
-          className={`object-cover brightness-75 absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-            index === currentImage ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-          }`}
-          priority={index === 0} // Only the first image is high priority
-        />
-      ))}
+      <div className="absolute inset-0">
+        {heroImages.map((src, index) => (
+          <Image
+            key={src}
+            src={src}
+            alt={`Uganda Safari ${index + 1}`}
+            fill
+            className={`object-cover transition-opacity duration-1000 ease-in-out ${
+              index === currentImage ? "opacity-100" : "opacity-0"
+            }`}
+            priority={index === 0} // only first image prioritized
+            quality={95}
+          />
+        ))}
+      </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center">
+      <div className="absolute inset-0 flex items-center z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full mb-6 border border-white/20">
@@ -55,7 +73,9 @@ export function HeroSection() {
             </h1>
 
             <p className="text-xl text-white/90 mb-8 max-w-xl leading-relaxed">
-              Immerse yourself in Africa's most spectacular wildlife experiences. From majestic gorillas to roaming elephants, we craft unforgettable journeys through Uganda's pristine landscapes.
+              Immerse yourself in Africa&apos;s most spectacular wildlife
+              experiences. From majestic gorillas to roaming elephants, we craft
+              unforgettable journeys through Uganda&apos;s pristine landscapes.
             </p>
 
             {/* CTA Buttons */}
@@ -66,6 +86,7 @@ export function HeroSection() {
                   <ArrowRight size={20} />
                 </Button>
               </Link>
+
               <Link href="#featured">
                 <Button
                   variant="outline"
@@ -95,8 +116,22 @@ export function HeroSection() {
         </div>
       </div>
 
+      {/* Slideshow Dot Indicators */}
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        {heroImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImage(index)}
+            className={`h-2 rounded-full transition-all ${
+              index === currentImage ? "bg-primary w-8" : "bg-white/50 w-2"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
         <div className="flex flex-col items-center gap-2">
           <span className="text-white text-sm">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
@@ -105,5 +140,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

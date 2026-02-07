@@ -29,13 +29,13 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2 group">
             <Image
               src="/tourscape-logo.png"
-              alt="TourScape Safaris Logo"
+              alt="Tourscape Safaris Logo"
               width={40}
               height={40}
               className="object-contain"
             />
             <span className="font-bold text-lg text-foreground hidden sm:inline">
-              TourScape Safaris
+              Tourscape Safaris
             </span>
           </Link>
 
