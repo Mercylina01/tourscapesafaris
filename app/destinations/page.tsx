@@ -72,7 +72,7 @@ const destinations: Destination[] = [
     bestTime: 'Year-round',
     difficulty: 'Easy to Moderate',
     visitors: 4000,
-    image: '/luxury-lodge.jpg',
+    image: '/murchison.jpg',
   },
   {
     id: '6',

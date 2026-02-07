@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { MapPin, Clock, Users, Star } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function InternationalToursPage() {
   const [filter, setFilter] = useState<'all' | 'africa' | 'middle-east' | 'europe'>('all')
@@ -19,7 +20,7 @@ export default function InternationalToursPage() {
       duration: 14,
       groupSize: '4-8 people',
       price: 5499,
-      image: '/hero-safari.jpg',
+      image: '/kenya.jpg',
       highlights: ['Serengeti Migration', 'Mount Kilimanjaro', 'Gorilla Trekking', 'Beach Relaxation'],
       rating: 4.9,
       reviews: 48,
@@ -32,7 +33,7 @@ export default function InternationalToursPage() {
       duration: 12,
       groupSize: '4-8 people',
       price: 4899,
-      image: '/queen-elizabeth-park.jpg',
+      image: '/south-africa.jpg',
       highlights: ['Victoria Falls', 'Safari Parks', 'Wine Tasting', 'Adventure Activities'],
       rating: 4.8,
       reviews: 35,
@@ -45,7 +46,7 @@ export default function InternationalToursPage() {
       duration: 10,
       groupSize: '6-12 people',
       price: 2899,
-      image: '/adventure-activities.jpg',
+      image: '/eygpt.jpg',
       highlights: ['Pyramids of Giza', 'Luxor Temples', 'Nile River Cruise', 'Cairo Market Tour'],
       rating: 4.7,
       reviews: 52,
@@ -58,7 +59,7 @@ export default function InternationalToursPage() {
       duration: 8,
       groupSize: '2-10 people',
       price: 3299,
-      image: '/luxury-lodge.jpg',
+      image: '/dubai.jpg',
       highlights: ['Burj Khalifa', 'Desert Safari', 'Wadi Adventure', 'Luxury Shopping'],
       rating: 4.6,
       reviews: 41,
@@ -71,7 +72,7 @@ export default function InternationalToursPage() {
       duration: 16,
       groupSize: '4-10 people',
       price: 6299,
-      image: '/mountain-gorillas.jpg',
+      image: '/italy.jpg',
       highlights: ['Colosseum Rome', 'Eiffel Tower', 'Sagrada Familia', 'Wine Regions'],
       rating: 4.8,
       reviews: 63,
@@ -84,7 +85,7 @@ export default function InternationalToursPage() {
       duration: 12,
       groupSize: '4-8 people',
       price: 5899,
-      image: '/hero-safari.jpg',
+      image: '/swizz.jpg',
       highlights: ['Swiss Alps', 'Mountain Railways', 'Bavarian Villages', 'Lake Views'],
       rating: 4.9,
       reviews: 44,
@@ -111,46 +112,21 @@ export default function InternationalToursPage() {
         <section className="bg-background border-b border-border py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() => setFilter('all')}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  filter === 'all'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-white text-foreground border border-border hover:bg-muted'
-                }`}
-              >
-                All Tours
-              </button>
-              <button
-                onClick={() => setFilter('africa')}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  filter === 'africa'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-white text-foreground border border-border hover:bg-muted'
-                }`}
-              >
-                Africa
-              </button>
-              <button
-                onClick={() => setFilter('middle-east')}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  filter === 'middle-east'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-white text-foreground border border-border hover:bg-muted'
-                }`}
-              >
-                Middle East
-              </button>
-              <button
-                onClick={() => setFilter('europe')}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  filter === 'europe'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-white text-foreground border border-border hover:bg-muted'
-                }`}
-              >
-                Europe
-              </button>
+              {['all', 'africa', 'middle-east', 'europe'].map((region) => (
+                <button
+                  key={region}
+                  onClick={() => setFilter(region as any)}
+                  className={`px-6 py-2 rounded-full font-semibold transition ${
+                    filter === region
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-white text-foreground border border-border hover:bg-muted'
+                  }`}
+                >
+                  {region === 'all'
+                    ? 'All Tours'
+                    : region.charAt(0).toUpperCase() + region.slice(1).replace('-', ' ')}
+                </button>
+              ))}
             </div>
           </div>
         </section>
@@ -162,10 +138,18 @@ export default function InternationalToursPage() {
               {filteredTours.map((tour) => (
                 <div key={tour.id} className="bg-background rounded-lg overflow-hidden hover:shadow-xl transition border border-border">
                   {/* Image */}
-                  <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-foreground/40">
-                        <MapPin size={32} className="mx-auto mb-2" />
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={tour.image}
+                      alt={tour.name}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-t-lg"
+                      priority
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/25">
+                      <div className="text-center text-white">
+                        <MapPin size={32} className="mx-auto mb-1" />
                         <p className="text-sm font-semibold">{tour.countries.join(', ')}</p>
                       </div>
                     </div>
@@ -174,8 +158,7 @@ export default function InternationalToursPage() {
                   {/* Content */}
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-foreground mb-2">{tour.name}</h3>
-                    
-                    {/* Details */}
+
                     <div className="space-y-2 mb-4 text-sm text-foreground/70">
                       <div className="flex gap-2 items-center">
                         <Clock size={16} className="text-primary" />
@@ -191,7 +174,6 @@ export default function InternationalToursPage() {
                       </div>
                     </div>
 
-                    {/* Highlights */}
                     <div className="mb-4">
                       <p className="text-xs font-semibold text-foreground/60 mb-2">Highlights:</p>
                       <div className="flex flex-wrap gap-1">
@@ -203,7 +185,6 @@ export default function InternationalToursPage() {
                       </div>
                     </div>
 
-                    {/* Price and Button */}
                     <div className="border-t border-border pt-4">
                       <div className="flex items-center justify-between">
                         <div>
