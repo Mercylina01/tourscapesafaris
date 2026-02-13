@@ -25,7 +25,7 @@ export default function ContactPage() {
 
   const handleWhatsApp = () => {
     const message = `Hello TourScape Safaris,%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0A%0ASubject: ${formData.subject}%0A%0AMessage: ${formData.message}`
-    window.open(`https://wa.me/256702860241?text=${message}`, '_blank')
+    window.open(`https://wa.me/256755543365?text=${message}`, '_blank')
   }
 
   const handleEmail = () => {
@@ -59,8 +59,8 @@ export default function ContactPage() {
                 <Phone size={24} />
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground">Phone & WhatsApp</h3>
-              <a href="tel:+256702860241" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
-                +256 784 606507
+              <a href="tel:+256200909023" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
+                +256 200 909023/+256 755 543365
               </a>
               <p className="text-muted-foreground text-sm">Available 24/7 for bookings & emergencies</p>
             </Card>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+256 002 000 001"
+                      placeholder="+256 200 909023"
                       className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
                   </div>
