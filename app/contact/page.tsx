@@ -59,8 +59,8 @@ export default function ContactPage() {
                 <Phone size={24} />
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground">Phone & WhatsApp</h3>
-              <a href="tel:+256200909023" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
-                +256 200 909023/+256 755 543365
+              <a href="tel:256724618" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
+                +256 200 909023
               </a>
               <p className="text-muted-foreground text-sm">Available 24/7 for bookings & emergencies</p>
             </Card>

@@ -133,8 +133,8 @@ export default function BookingPage() {
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                   <p className="text-foreground/70">
                     <strong>Need immediate assistance?</strong> Contact us on WhatsApp at{' '}
-                    <a href="https://wa.me/256784606507" className="text-primary font-semibold hover:underline">
-                      +256 784 606 507
+                    <a href="https://wa.me/256701724618" className="text-primary font-semibold hover:underline">
+                      +256 701 724 618
                     </a>
                   </p>
                 </div>
@@ -194,7 +194,7 @@ export default function BookingPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="+256 700 000 000"
+                        placeholder="+256 700 000000"
                       />
                     </div>
                     <div>
@@ -330,14 +330,14 @@ export default function BookingPage() {
                 Reach out to us directly for personalized assistance with your booking
               </p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://wa.me/256784606507" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/256701724618" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-secondary text-white hover:bg-secondary/90 px-8">
-                    WhatsApp: +256 784 606 507
+                    WhatsApp 
                   </Button>
                 </a>
-                <a href="tel:+256784606507">
+                <a href="tel:+2567020909023">
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-                    Call: +256 784 606 507
+                    Call: +256 7020909023
                   </Button>
                 </a>
                 <a href="mailto:info@tourscape.org">
