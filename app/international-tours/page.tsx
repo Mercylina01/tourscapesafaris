@@ -213,7 +213,7 @@ export default function InternationalToursPage() {
               We offer customized tour packages tailored to your preferences. Contact us for a personalized itinerary.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <a href="https://wa.me/256702860241" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/256784606507" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-primary hover:bg-white/90">
                   WhatsApp Us
                 </Button>

@@ -25,7 +25,7 @@ export default function ContactPage() {
 
   const handleWhatsApp = () => {
     const message = `Hello TourScape Safaris,%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0A%0ASubject: ${formData.subject}%0A%0AMessage: ${formData.message}`
-    window.open(`https://wa.me/256755543365?text=${message}`, '_blank')
+    window.open(`https://wa.me/256784606507?text=${message}`, '_blank')
   }
 
   const handleEmail = () => {
@@ -73,7 +73,7 @@ export default function ContactPage() {
               <a href="mailto:info@tourscapesafaris.com" className="text-muted-foreground hover:text-primary transition mb-1 block font-semibold">
                 info@tourscapesafaris.com
               </a>
-              <p className="text-muted-foreground text-sm">We respond within 24 hours</p>
+              <p className="text-muted-foreground text-sm">We respond within an hour</p>
             </Card>
 
             <Card className="p-8 border-border">

@@ -40,7 +40,7 @@ export function CTASection() {
                   <ArrowRight size={20} />
                 </Button>
               </Link>
-              <Link href="#contact">
+              <Link href="/contact">
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 text-lg h-12 px-8 flex items-center gap-2 bg-transparent"
@@ -48,8 +48,6 @@ export function CTASection() {
                   <Phone size={20} />
                   Contact Us
                 </Button>
-                <Link href="#contact">
-              </Link>
               </Link>
             </div>
           </div>
@@ -103,7 +101,7 @@ export function CTASection() {
             </form>
 
             <p className="text-primary-foreground/70 text-xs mt-4 text-center">
-              We&apos;ll respond within 24 hours
+              We&apos;ll respond within an  hour
             </p>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react"
+import Link from 'next/link'
 
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
@@ -133,8 +134,8 @@ export default function BookingPage() {
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                   <p className="text-foreground/70">
                     <strong>Need immediate assistance?</strong> Contact us on WhatsApp at{' '}
-                    <a href="https://wa.me/256701724618" className="text-primary font-semibold hover:underline">
-                      +256 701 724 618
+                    <a href="https://wa.me/256784606507" className="text-primary font-semibold hover:underline">
+                      +256 784 606 507
                     </a>
                   </p>
                 </div>
@@ -304,6 +305,8 @@ export default function BookingPage() {
                   >
                     Complete Booking
                   </Button>
+                  <Link href="/info@tourscape.org">
+                  </Link>
                   <Button
                     type="button"
                     variant="outline"
@@ -317,7 +320,7 @@ export default function BookingPage() {
                 {/* Footer Note */}
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-foreground/70">
                   <p>
-                    <strong>Note:</strong> This is an initial booking inquiry form. Our team will contact you within 24 hours to confirm availability, finalize pricing, and answer any questions.
+                    <strong>Note:</strong> This is an initial booking inquiry form. Our team will contact you within an hour to confirm availability, finalize pricing, and answer any questions.
                   </p>
                 </div>
               </form>
