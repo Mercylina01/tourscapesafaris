@@ -48,6 +48,8 @@ export function CTASection() {
                   <Phone size={20} />
                   Contact Us
                 </Button>
+                <Link href="#contact">
+              </Link>
               </Link>
             </div>
           </div>

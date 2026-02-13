@@ -94,7 +94,7 @@ export default function ServicesPage() {
 
   const handleServiceClick = (service: string) => {
     if (service === 'Learn More') {
-      setActiveService('visa')
+      window.location.href = '/contact'
     } else if (service === 'Book Flights') {
       window.location.href = '/booking?service=flights'
     } else if (service === 'Arrange Transport') {

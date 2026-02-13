@@ -193,7 +193,7 @@ export default function AboutPage() {
                   Book Now
                 </Button>
               </Link>
-              <a href="https://wa.me/256702860241" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/256784606507" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white/20 text-white border border-white hover:bg-white/30">
                   WhatsApp Us
                 </Button>

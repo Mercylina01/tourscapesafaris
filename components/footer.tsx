@@ -61,7 +61,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex gap-2 items-start">
                 <Phone size={16} className="mt-0.5 flex-shrink-0 text-primary" />
-                <a href="tel:+256702860241" className="hover:opacity-100 hover:text-primary opacity-80 transition">
+                <a href="tel:+256200909023" className="hover:opacity-100 hover:text-primary opacity-80 transition">
                   +256 200 909023
                 </a>
               </li>
@@ -114,7 +114,7 @@ export function Footer() {
                 <Instagram size={20} className="text-foreground" />
               </a>
               <a 
-                href="https://wa.me/256702860241" 
+                href="https://wa.me/256784606507" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-primary rounded-full hover:bg-primary/90 transition transform hover:scale-110" 
@@ -131,7 +131,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
-          <p>&copy; 2024 TourScape Safaris. All rights reserved.</p>
+          <p>&copy; 2026 Tourscape Safaris. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="#" className="hover:opacity-100 hover:text-primary transition">
               Privacy Policy

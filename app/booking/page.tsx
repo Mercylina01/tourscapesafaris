@@ -330,14 +330,14 @@ export default function BookingPage() {
                 Reach out to us directly for personalized assistance with your booking
               </p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://wa.me/256701724618" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/256784606507" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-secondary text-white hover:bg-secondary/90 px-8">
                     WhatsApp 
                   </Button>
                 </a>
                 <a href="tel:+2567020909023">
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-                    Call: +256 7020909023
+                    Call: +256 20909023
                   </Button>
                 </a>
                 <a href="mailto:info@tourscape.org">
